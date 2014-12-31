@@ -1,0 +1,5 @@
+main: com.zandor300.ayencraft.AyenCraft
+name: AyenCraft
+author: Zandor300
+version: 1.0
+depend: [WorldEdit,Core]

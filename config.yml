@@ -1,0 +1,222 @@
+villagers:
+  miner:
+    fancyname: '&5Miner'
+    story:
+    - Ik hou van stone!
+    - Stone stone stone!
+    - Wil jij ook stone?
+    - Een hele mooie stone?
+    multitrade: false
+    giveitem:
+      name: 'stone'
+      amount: 64
+      acceptmessage: '&aAlsjeblieft hier heb jij 64 stone!'
+    takeitem:
+      name: ''
+      amount: 1
+      denymessage: ''
+    location:
+      w: 'world'
+      x: 814.5
+      y: 5
+      z: 307.5
+  oudeman:
+    fancyname: '&9Oude man'
+    story:
+    - Mijn huis is verwoest...
+    - Kan jij mij 63 stone geven in ruil voor 9 emeralds?
+    multitrade: false
+    giveitem:
+      name: 'emerald'
+      amount: 9
+      acceptmessage: '&aBedankt!'
+    takeitem:
+      name: 'stone'
+      amount: 63
+      denymessage: '&cIk heb 63 stone nodig... Je kunt dat bij de mine vinden...'
+    location:
+      w: 'world'
+      x: 821.5
+      y: 5
+      z: 308.5
+  dief:
+    fancyname: '&4Dief'
+    story:
+    - Ik ga je helemaal niets geven!
+    - Mwhahahahahaha!!!
+    multitrade: true
+    giveitem:
+      name: 'emerald'
+      amount: 1
+      acceptmessage: 'Mwhahahahahaha!!!'
+    takeitem:
+      name: 'emerald'
+      amount: 2
+      denymessage: 'Mwhahahahahaha!!!'
+    location:
+      w: 'world'
+      x: 799.5
+      y: 5
+      z: 303.5
+  jacketseller:
+    fancyname: '&2Jacket Seller'
+    story:
+    - 'Dat is dan 3 emeralds.'
+    multitrade: true
+    giveitem:
+      name: 'jacket'
+      amount: 1
+      acceptmessage: '&aBedankt voor uw aankoop en tot ziens!'
+    takeitem:
+      name: 'emerald'
+      amount: 3
+      denymessage: '&cJe hebt niet genoeg emeralds om dit te kopen!'
+    location:
+      w: 'world'
+      x: 802
+      y: 5
+      z: 318
+  pickaxeseller:
+    fancyname: '&2Pickaxe Seller'
+    story:
+    - 'Dat is dan 4 emeralds.'
+    multitrade: true
+    giveitem:
+      name: 'pickaxe'
+      amount: 1
+      acceptmessage: '&aBedankt voor uw aankoop en tot ziens!'
+    takeitem:
+      name: 'emerald'
+      amount: 4
+      denymessage: '&cJe hebt niet genoeg emeralds om dit te kopen!'
+    location:
+      w: 'world'
+      x: 811
+      y: 5
+      z: 318
+items:
+  emerald:
+    fancyname: '&aFancy Emerald!'
+    lore:
+    - '&4This is a fancy dancy Emerald!'
+    - '&8This is another fancy line of emeralds!'
+    id: 388
+  stone:
+    fancyname: '&8Fancy Stoneblock!'
+    lore:
+    - '&3A fancy dancy stoneblock!'
+    id: 1
+  jacket:
+    fancyname: '&6Jacket!'
+    lore:
+    - '&3A beautifull jacket!'
+    id: 299
+  pickace:
+    fancyname: '&6Pickaxe'
+    lore:
+    - '&3A high quality pickaxe!'
+    id: 278
+mobs:
+  weakzombie:
+    fancyname: '&4Weak Zombie'
+    level: 1
+    health: 20
+    type: 'zombie'
+    inventory:
+      weapon: 268
+      helmet: 298
+      chestplate: 299
+      leggings: 0
+      boots: 0
+  strongskeleton:
+    fancyname: '&4Strong Skeleton'
+    level: 9
+    health: 20
+    type: 'skeleton'
+    inventory:
+      weapon: 267
+      helmet: 0
+      chestplate: 307
+      leggings: 0
+      boots: 313
+  chicken:
+    fancyname: '&aChicken'
+    level: 1
+    health: 4
+    type: 'chicken'
+    inventory:
+      weapon: 0
+      helmet: 0
+      chestplate: 0
+      leggings: 0
+      boots: 0
+  cow:
+    fancyname: '&aCow'
+    level: 1
+    health: 10
+    type: 'cow'
+    inventory:
+      weapon: 0
+      helmet: 0
+      chestplate: 0
+      leggings: 0
+      boots: 0
+  joram:
+    fancyname: '&aJoram'
+    level: 99999999999
+    health: 1
+    type: 'wolf'
+    inventory:
+      weapon: 0
+      helmet: 0
+      chestplate: 0
+      leggings: 0
+      boots: 0
+spawnpoints:
+  village:
+    mobs:
+    - cow
+    - chicken
+    - joram
+    radius: 30
+    spawndelay: 5
+    maxentities: 6
+    location:
+      w: 'world'
+      x: 812.5
+      y: 5
+      z: 326.5
+  tree:
+    mobs:
+    - weakzombie
+    - strongskeleton
+    radius: 30
+    spawndelay: 5
+    maxentities: 3
+    location:
+      w: 'world'
+      x: 823.5
+      y: 5
+      z: 365.5
+areas:
+  village:
+    name: '&aAyenCity'
+    canenter: true
+    entermessage: 'Welkom in AyenCity'
+    canleave: true
+    leavemessage: 'Tot ziens!'
+    location:
+      w: 'world'
+      a: 
+        x: 784
+        y: 30
+        z: 280
+      b: 
+        x: 837
+        y: 5
+        z: 334
+kits:
+  archer:
+    name: '&9Archer'
+    items:
+    - 'pickace-1-1'
