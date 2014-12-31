@@ -68,6 +68,24 @@ public class QuestVillager implements Listener {
 		Bukkit.getPluginManager().registerEvents(this, AyenCraft.getPlugin());
 	}
 
+	public static QuestVillager getQuestVillager(String name) {
+		for(QuestVillager villager : allVillagers)
+			if(villager.getName().equalsIgnoreCase(name))
+				return villager;
+		return null;
+	}
+
+	public static QuestVillager getFancyQuestVillager(String fancyName) {
+		for(QuestVillager villager : allVillagers)
+			if(villager.getFancyName().equalsIgnoreCase(fancyName))
+				return villager;
+		return null;
+	}
+
+	public static ArrayList<QuestVillager> getAllVillagers() {
+		return allVillagers;
+	}
+
 	public String getName() {
 		return name;
 	}

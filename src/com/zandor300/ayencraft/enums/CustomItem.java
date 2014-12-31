@@ -51,6 +51,10 @@ public class CustomItem {
 		return null;
 	}
 
+	public static ArrayList<CustomItem> getAllItems() {
+		return allItems;
+	}
+
 	public String getName() {
 		return name;
 	}
