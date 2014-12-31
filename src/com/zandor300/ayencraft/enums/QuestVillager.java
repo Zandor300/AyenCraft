@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.CreatureType;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -102,6 +103,10 @@ public class QuestVillager implements Listener {
 		return giveItem;
 	}
 
+	public boolean isGivingAnItem() {
+		return giveItem != null;
+	}
+
 	public int getGiveItemAmount() {
 		return giveItemAmount;
 	}
@@ -112,6 +117,10 @@ public class QuestVillager implements Listener {
 
 	public CustomItem getTakeItem() {
 		return takeItem;
+	}
+
+	public boolean isTakingAnItem() {
+		return takeItem != null;
 	}
 
 	public int getTakeItemAmount() {
@@ -128,6 +137,18 @@ public class QuestVillager implements Listener {
 
 	public LivingEntity getEntity() {
 		return entity;
+	}
+
+	public void nextLine(Player player) {
+		// TODO: Story system.
+	}
+
+	public void giveItem(Player player) {
+		giveItem.give(player, giveItemAmount);
+	}
+
+	public void takeItem(Player player) {
+		takeItem.remove(player, takeItemAmount);
 	}
 
 	public void respawn() {

@@ -5,6 +5,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.material.MaterialData;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,13 +68,53 @@ public class CustomItem {
 		return itemStack.getType();
 	}
 
+	public MaterialData getData() {
+		return itemStack.getData();
+	}
+
 	public ItemStack getItemStack() {
 		return itemStack;
+	}
+
+	public boolean hasItem(Player player) {
+		boolean b = false;
+		for(int i = 0; i < 35; i++)
+			if(player.getInventory().getItem(i).getType().equals(getType()))
+				if(player.getInventory().getItem(i).getData().equals(getData()))
+					if(player.getInventory().getItem(i).getItemMeta().getDisplayName().equals(getFancyName()))
+						b = true;
+		return b;
+	}
+
+	public boolean isItem(ItemStack itemStack1) {
+		boolean b = false;
+		if(itemStack1.getType().equals(getType()))
+			if(itemStack1.getData().equals(getData()))
+				if(itemStack1.getItemMeta().getDisplayName().equals(getFancyName()))
+					b = true;
+		return b;
 	}
 
 	public void give(Player player, int amount) {
 		for(int i = amount; i < amount; i++)
 			player.getInventory().addItem(itemStack);
+	}
+
+	public void remove(Player player, int amount) {
+		if(!hasItem(player))
+			return;
+		for(int i = 0; i < 35; i++) {
+			ItemStack itemStack1 = player.getInventory().getItem(i);
+			int itemAmount = itemStack1.getAmount();
+			int removedAmount = itemAmount - amount;
+			if(removedAmount <= 0) {
+				removedAmount = 0;
+				amount = amount - itemAmount;
+			}
+			set(player, i, removedAmount);
+			if(removedAmount > 0)
+				break;
+		}
 	}
 
 	public void set(Player player, int slot, int amount) {
