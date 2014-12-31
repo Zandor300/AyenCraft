@@ -140,7 +140,18 @@ public class QuestVillager implements Listener {
 	}
 
 	public void nextLine(Player player) {
-		// TODO: Story system.
+		int line = 0;
+		if(playerLine.containsKey(player.getName()))
+			line = playerLine.get(player.getName());
+
+		player.sendMessage(getLine(line));
+
+		if(line < story.size())
+			playerLine.put(player.getName(), line + 1);
+	}
+
+	public String getLine(int line) {
+		return ChatColor.DARK_GREEN + "[" + line + "/" + story.size() + "] " + fancyName + ChatColor.DARK_GREEN + ": " + story.get(line);
 	}
 
 	public void giveItem(Player player) {
