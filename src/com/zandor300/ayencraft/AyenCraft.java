@@ -12,13 +12,17 @@ import org.bukkit.plugin.java.JavaPlugin;
  */
 public class AyenCraft extends JavaPlugin{
 
+	private static AyenCraft plugin;
+	public static AyenCraft getPlugin() {
+		return plugin;
+	}
 	private static Chat chat = new Chat("AyenCraft", ChatColor.DARK_GREEN);
 
 	@Override
 	public void onEnable() {
 		chat.sendConsoleMessage("Setting plugin up...");
 
-
+		plugin = this;
 
 		chat.sendConsoleMessage("AyenCraft enabled.");
 	}
