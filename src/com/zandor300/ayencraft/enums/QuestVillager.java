@@ -125,6 +125,7 @@ public class QuestVillager implements Listener {
 
 	public int getTakeItemAmount() {
 		return takeItemAmount;
+
 	}
 
 	public String getTakeItemDenyLine() {
